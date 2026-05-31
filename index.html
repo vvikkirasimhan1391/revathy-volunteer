@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revathy Venkat — Heart for the Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #FFF0F5;
+      --ink2:    #FADDEA;
+      --ink3:    #F7C9DC;
+      --rose:    #E8185A;
+      --rose2:   #FF4D7A;
+      --warm:    #FF8C42;
+      --cream:   #FFFFFF;
+      --white:   #1A1520;
+      --muted:   #9B4D6A;
+      --border:  rgba(232,24,90,0.13);
+      --max:     1340px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ink);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 68px;
+      background: rgba(255,240,245,0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--white); letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--rose); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--rose); color: var(--white);
+      padding: 0.55rem 1.4rem; border-radius: 3px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--rose2); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 76vh;
+      background: var(--ink);
+      background-image: url('photos/photo11.jpeg');
+      background-size: cover;
+      background-position: center 30%;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 0;
+      position: relative; overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 3rem;
+      align-items: end;
+      padding: 0 3rem 4rem;
+      position: relative;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(255,220,235,0.82) 0%, rgba(255,200,220,0.88) 60%, rgba(255,180,210,0.92) 100%),
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(255,255,255,0.25) 0%, transparent 60%);
+    }
+    .hero-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 1.6rem;
+      position: relative;
+      animation: fadeIn 0.8s ease both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    .hero-label::before {
+      content: ''; display: inline-block;
+      width: 32px; height: 2px;
+      background: var(--rose); margin-right: 0.8rem;
+      vertical-align: middle; margin-bottom: 2px;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(4.5rem, 11vw, 10rem);
+      font-weight: 900; line-height: 0.92;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      max-width: 1000px;
+      position: relative;
+    }
+    .hero h1 .name-first {
+      display: block; color: #1A1520;
+      animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .hero h1 .name-last {
+      display: block;
+      color: var(--rose);
+      animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.15s both;
+      position: relative;
+    }
+    /* glowing underline on the last name */
+    .hero h1 .name-last::after {
+      content: '';
+      position: absolute; left: 0; bottom: 0.08em;
+      width: 100%; height: 4px;
+      background: var(--rose);
+      box-shadow: 0 0 20px rgba(232,24,90,0.4);
+      transform: scaleX(0); transform-origin: left;
+      animation: lineGrow 0.7s cubic-bezier(0.16,1,0.3,1) 0.9s both;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes lineGrow {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    .hero h1 em {
+      font-style: italic; font-weight: 300;
+      color: var(--rose);
+    }
+    .hero-left { display: flex; flex-direction: column; }
+    .hero-bottom {
+      display: flex; flex-direction: column;
+      margin-top: 2rem; position: relative;
+      animation: slideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s both;
+      gap: 1.4rem;
+    }
+    .hero-desc {
+      font-size: 1.1rem; font-weight: 300; line-height: 1.8;
+      color: rgba(26,21,32,0.6);
+      max-width: 440px;
+    }
+    .hero-desc strong { color: #1A1520; font-weight: 600; }
+    .hero-scroll {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .hero-scroll::after {
+      content: '↓';
+      font-size: 1rem; animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+    /* hero line */
+    .hero-line {
+      position: absolute; bottom: 0; left: 3rem; right: 3rem;
+      height: 1px; background: var(--border);
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { width: 100%; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 3rem; }
+    .section-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-label::before {
+      content: ''; width: 24px; height: 2px; background: var(--rose); flex-shrink: 0;
+    }
+
+    /* ─── IMPACT NUMBERS ─── */
+    #impact {
+      background: var(--ink2);
+      padding: 7rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .impact-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 4rem;
+      margin-bottom: 5rem;
+    }
+    .impact-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 700; line-height: 1.1;
+      max-width: 520px; color: #1A1520;
+    }
+    .impact-title em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .impact-intro {
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(26,21,32,0.55);
+      max-width: 380px; padding-top: 0.5rem;
+    }
+    /* hero-right stats */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px;
+      background: rgba(232,24,90,0.15);
+      border: 1.5px solid rgba(232,24,90,0.22);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .hstat {
+      background: rgba(255,240,245,0.82);
+      backdrop-filter: blur(12px);
+      padding: 1.8rem 1.6rem;
+      transition: background 0.2s;
+    }
+    .hstat:hover { background: rgba(255,220,235,0.95); }
+    .hstat-num {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.2rem, 5vw, 4.8rem);
+      font-weight: 900; line-height: 1;
+      color: #1A1520; letter-spacing: -0.03em;
+    }
+    .hstat-num span { color: var(--rose); }
+    .hstat-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rose); margin-top: 0.6rem;
+    }
+    .hstat-desc {
+      font-size: 0.8rem; color: #9B4D6A;
+      margin-top: 0.3rem; line-height: 1.5;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(232,24,90,0.15);
+    }
+    .stat-item {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid rgba(232,24,90,0.15);
+    }
+    .stat-item:last-child { border-right: none; padding-left: 2rem; }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-num {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.5rem, 6vw, 5.5rem);
+      font-weight: 900; line-height: 1;
+      color: #1A1520; letter-spacing: -0.02em;
+    }
+    .stat-num span { color: var(--rose); }
+    .stat-label {
+      font-size: 0.82rem; font-weight: 500;
+      color: var(--muted); margin-top: 0.8rem;
+      line-height: 1.5; letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .stat-desc {
+      font-size: 0.88rem; color: rgba(26,21,32,0.45);
+      margin-top: 0.4rem; line-height: 1.6;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: var(--cream);
+      color: var(--ink);
+      padding: 8rem 0;
+    }
+    #about .section-label { color: var(--rose); }
+    #about .section-label::before { background: var(--rose); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo-wrap img {
+      width: 100%; aspect-ratio: 4/5;
+      object-fit: cover; display: block;
+    }
+    .about-photo-wrap .photo-fallback {
+      width: 100%; aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #FFE8F2, #FFC8DC);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-size: 6rem; color: var(--rose);
+    }
+    .about-tag {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--rose);
+      color: white;
+      padding: 1.2rem 1.6rem;
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .about-tag strong {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem; font-weight: 900;
+      letter-spacing: -0.02em; line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .about-content {}
+    .about-content h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--ink); margin-bottom: 1.8rem;
+    }
+    .about-content h2 em {
+      font-style: italic; font-weight: 300; color: var(--rose);
+    }
+    .about-content p {
+      font-size: 1rem; line-height: 1.85;
+      color: #5A2A3E; margin-bottom: 1.2rem;
+    }
+    .about-content p:last-of-type { margin-bottom: 0; }
+    .about-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .pill {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      border: 1.5px solid rgba(232,24,90,0.3);
+      color: var(--rose); padding: 0.4rem 1rem;
+      border-radius: 2px;
+    }
+
+    /* ─── PROGRAMMES ─── */
+    #programmes {
+      background: var(--ink3);
+      padding: 8rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .programmes-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 3rem;
+      margin-bottom: 4rem;
+    }
+    .programmes-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; color: #1A1520;
+    }
+    .programmes-title em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .programmes-desc {
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(26,21,32,0.55);
+      max-width: 360px;
+    }
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(232,24,90,0.10);
+    }
+    .prog-card {
+      background: var(--ink3);
+      padding: 2.8rem 2.4rem;
+      transition: background 0.25s;
+      cursor: default;
+    }
+    .prog-card:hover { background: #F5B8CF; }
+    .prog-icon {
+      font-size: 2rem; margin-bottom: 1.5rem;
+    }
+    .prog-num {
+      font-family: 'Fraunces', serif;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.18em; color: var(--rose);
+      margin-bottom: 0.6rem;
+    }
+    .prog-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.45rem; font-weight: 700;
+      line-height: 1.2; margin-bottom: 1rem; color: #1A1520;
+    }
+    .prog-body {
+      font-size: 0.9rem; line-height: 1.75;
+      color: rgba(26,21,32,0.55);
+    }
+    .prog-years {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--rose);
+      border-top: 1px solid rgba(232,24,90,0.3);
+      padding-top: 0.8rem; width: 100%;
+    }
+
+    /* ─── FULL BLEED QUOTE ─── */
+    .quote-band {
+      background: var(--rose);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+    .quote-band blockquote {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 300; font-style: italic;
+      line-height: 1.4; color: white;
+      max-width: 860px; margin: 0 auto 1.5rem;
+    }
+    .quote-band cite {
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      font-style: normal;
+    }
+
+    /* ─── GALLERY ─── */
+    #photos {
+      background: var(--ink);
+      padding: 8rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .gallery-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .gallery-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1; color: #1A1520;
+    }
+    .gallery-title em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .gallery-sub {
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(26,21,32,0.5);
+      max-width: 380px;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+    .photo-grid .wide { grid-column: span 2; }
+    .photo-grid .tall { grid-row: span 2; }
+    .photo-item {
+      position: relative; overflow: hidden;
+      cursor: pointer; background: var(--ink2);
+      aspect-ratio: 1;
+    }
+    .photo-item.wide { aspect-ratio: 2/1; }
+    .photo-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .photo-item:hover img { transform: scale(1.05); }
+    .photo-fallback {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 2.5rem; color: rgba(232,24,90,0.4);
+      gap: 0.5rem;
+    }
+    .photo-fallback span {
+      font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(26,21,32,0.3);
+    }
+    .photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,11,16,0.8) 0%, transparent 50%);
+      opacity: 0; transition: opacity 0.3s;
+      display: flex; align-items: flex-end; padding: 1.2rem;
+    }
+    .photo-item:hover .photo-overlay { opacity: 1; }
+    .photo-caption {
+      font-size: 0.78rem; font-weight: 600;
+      line-height: 1.4; color: white;
+    }
+    .photo-caption .tag {
+      display: block; font-size: 0.65rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 0.2rem;
+    }
+
+    /* ─── TIMELINE ─── */
+    #timeline {
+      background: var(--cream); color: var(--ink);
+      padding: 8rem 0;
+    }
+    #timeline .section-label { color: var(--rose); }
+    #timeline .section-label::before { background: var(--rose); }
+    .tl-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--ink); margin-bottom: 4rem;
+    }
+    .tl-title em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .tl-track {
+      position: relative;
+      padding-left: 3rem;
+    }
+    .tl-track::before {
+      content: ''; position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, var(--rose), rgba(232,24,90,0.1));
+    }
+    .tl-item {
+      position: relative; padding-bottom: 3.5rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -3.4rem; top: 0.3rem;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--rose);
+      box-shadow: 0 0 0 4px rgba(232,24,90,0.15);
+    }
+    .tl-year {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--rose); margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+    .tl-event {
+      font-family: 'Fraunces', serif;
+      font-size: 1.45rem; font-weight: 700;
+      color: var(--ink); margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .tl-body {
+      font-size: 0.95rem; line-height: 1.75;
+      color: #6A3048;
+    }
+
+    /* ─── MOMENTS ─── */
+    #moments {
+      background: var(--cream);
+      padding: 8rem 0;
+      border-top: 1px solid rgba(232,24,90,0.1);
+    }
+    .moments-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      color: #1A1520; margin-bottom: 3.5rem;
+    }
+    .moments-title em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .moments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .moment-card {
+      background: #FFF8FA;
+      border: 1.5px solid rgba(232,24,90,0.12);
+      border-radius: 8px;
+      padding: 2.4rem 2rem;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .moment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(232,24,90,0.12);
+    }
+    .moment-card--rose {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+    .moment-card--rose .moment-tag,
+    .moment-card--rose .moment-heading,
+    .moment-card--rose .moment-body { color: white; }
+    .moment-card--rose .moment-tag { opacity: 0.85; }
+    .moment-icon {
+      font-size: 2.2rem; margin-bottom: 1.2rem; display: block;
+    }
+    .moment-tag {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--rose); margin-bottom: 0.7rem;
+    }
+    .moment-heading {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 700;
+      line-height: 1.3; color: #1A1520;
+      margin-bottom: 1rem;
+    }
+    .moment-body {
+      font-size: 0.95rem; line-height: 1.8;
+      color: #5A2A3E;
+    }
+
+    /* ─── CONNECT ─── */
+    #connect {
+      background: var(--ink2);
+      padding: 8rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: start;
+    }
+    .connect-left h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      margin-bottom: 1.5rem; color: #1A1520;
+    }
+    .connect-left h2 em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .connect-left p {
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(26,21,32,0.6); margin-bottom: 2.5rem;
+    }
+    .connect-info { display: flex; flex-direction: column; gap: 1.2rem; }
+    .ci-row {
+      display: flex; gap: 1rem;
+      align-items: flex-start;
+    }
+    .ci-icon {
+      width: 36px; height: 36px; background: rgba(232,24,90,0.10);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .ci-text { font-size: 0.9rem; line-height: 1.6; color: var(--white); }
+    .ci-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #6B607A; display: block; margin-bottom: 0.1rem;
+    }
+    .connect-form { display: flex; flex-direction: column; gap: 1.2rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-field label {
+      display: block; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 0.5rem;
+    }
+    .form-field input,
+    .form-field textarea {
+      width: 100%; background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(232,24,90,0.2);
+      color: #1A1520; padding: 0.85rem 1rem;
+      font-family: 'Inter', sans-serif; font-size: 0.95rem;
+      border-radius: 2px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #9B4D6A; opacity: 0.7; }
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--rose); }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+    .btn-submit {
+      background: var(--rose); color: white;
+      border: none; padding: 1rem 2.4rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; border-radius: 2px;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .btn-submit:hover { background: var(--rose2); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex; align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 700; color: #1A1520;
+    }
+    .footer-logo span { color: var(--rose); }
+    .footer-copy {
+      font-size: 0.78rem; color: #6B607A;
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #1A1520; }
+
+    /* ─── LIGHTBOX ─── */
+    .lb {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(10,6,20,0.94);
+      display: none; align-items: center; justify-content: center;
+    }
+    .lb.open { display: flex; }
+    .lb-inner { position: relative; max-width: 960px; width: 90%; }
+    .lb-inner img { width: 100%; max-height: 85vh; object-fit: contain; display: block; }
+    .lb-close {
+      position: absolute; top: -3rem; right: 0;
+      background: none; border: none; color: white;
+      font-size: 1.8rem; cursor: pointer; opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lb-close:hover { opacity: 1; }
+    .lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(232,24,90,0.2); border: 1px solid rgba(232,24,90,0.3);
+      color: white; font-size: 1.4rem;
+      cursor: pointer; padding: 0.6rem 1rem;
+      border-radius: 2px; transition: background 0.2s;
+    }
+    .lb-nav:hover { background: var(--rose); }
+    .lb-prev { right: calc(100% + 1rem); }
+    .lb-next { left: calc(100% + 1rem); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      /* hero-right stats */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5px;
+      background: rgba(232,24,90,0.15);
+      border: 1.5px solid rgba(232,24,90,0.22);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .hstat {
+      background: rgba(255,240,245,0.82);
+      backdrop-filter: blur(12px);
+      padding: 1.8rem 1.6rem;
+      transition: background 0.2s;
+    }
+    .hstat:hover { background: rgba(255,220,235,0.95); }
+    .hstat-num {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.2rem, 5vw, 4.8rem);
+      font-weight: 900; line-height: 1;
+      color: #1A1520; letter-spacing: -0.03em;
+    }
+    .hstat-num span { color: var(--rose); }
+    .hstat-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--rose); margin-top: 0.6rem;
+    }
+    .hstat-desc {
+      font-size: 0.8rem; color: #9B4D6A;
+      margin-top: 0.3rem; line-height: 1.5;
+    }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .photo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 860px) {
+      nav { padding: 0 1.5rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem 4rem; }
+      .hero-stats { margin-top: 0; }
+      .nav-links { display: none; }
+      .hero { padding: 0 1.5rem 5rem; }
+      .wrap { padding: 0 1.5rem; }
+      .about-grid, .connect-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .prog-grid { grid-template-columns: 1fr; }
+      .moments-grid { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-grid .wide { grid-column: span 1; aspect-ratio: 1; }
+      .impact-header { flex-direction: column; gap: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">Revathy<span> Venkat</span></span>
+    <ul class="nav-links">
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#programmes">Programmes</a></li>
+      <li><a href="#photos">Gallery</a></li>
+      <li><a href="#timeline">Journey</a></li>
+      <li><a href="#moments">Stories</a></li>
+    </ul>
+    <a href="#connect" class="nav-cta">Connect</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <!-- LEFT: name + tagline -->
+      <div class="hero-left">
+        <div class="hero-label">Families for Life · Singapore</div>
+        <h1>
+          <span class="name-first">Revathy</span>
+          <span class="name-last">Venkat.</span>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-desc">
+            <strong>Revathy Venkat</strong> — Family Ambassador &amp; Team Nila volunteer. Believer that small, consistent acts of showing up are what change communities from the inside out.
+          </p>
+          <a href="#about" class="hero-scroll">Read her story</a>
+        </div>
+      </div>
+      <!-- RIGHT: service numbers -->
+      <div class="hero-right">
+        <div class="hero-stats">
+          <div class="hstat">
+            <div class="hstat-num">208<span>+</span></div>
+            <div class="hstat-label">Service Hours</div>
+            <div class="hstat-desc">102h FFL · 97h Team Nila</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">88</div>
+            <div class="hstat-label">Sessions</div>
+            <div class="hstat-desc">48 FFL · 40 Team Nila</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">67<span>+</span></div>
+            <div class="hstat-label">Unique Events</div>
+            <div class="hstat-desc">41 FFL · 26 Team Nila</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">2</div>
+            <div class="hstat-label">Programmes</div>
+            <div class="hstat-desc">FFL · Team Nila Sport SG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-line"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <img src="photos/photo01.jpeg" alt="Revathy Venkat"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="photo-fallback" style="display:none;">R</div>
+          <div class="about-tag">
+            <strong>208h</strong>
+            Confirmed Service
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-label">About Revathy</div>
+          <h2>More Than a <em>Volunteer</em> — A Community Builder.</h2>
+          <p>
+            Revathy Venkat volunteers across two of Singapore's major programmes — <strong>Families for Life (FFL)</strong> as a Family Ambassador, and <strong>Team Nila</strong> under Sport Singapore. Together, she has clocked 208 confirmed service hours across 88 sessions and 67 unique events in 2025–2026.
+          </p>
+          <p>
+            With FFL, she engages parents and children at community events across Punggol, Sengkang, Tampines, Pasir Ris, and beyond — helping families connect with resources that strengthen them. With Team Nila, she has served at world-class events including the World Aquatics Championships, Standard Chartered Marathon (overnight!), SBH International Challenge, and the upcoming NBA Rising Stars Invitational 2026.
+          </p>
+          <p>
+            She also volunteered at <strong>two SG60 National Day events</strong> in August 2025 — a proud reflection of her commitment to the community that shaped her.
+          </p>
+          <div class="about-pills">
+            <span class="pill">Family Ambassador · FFL</span>
+            <span class="pill">Team Nila · Sport SG</span>
+            <span class="pill">National Family Festival</span>
+            <span class="pill">SG60 National Day</span>
+            <span class="pill">World Aquatics 2025</span>
+            <span class="pill">SC Marathon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE BAND -->
+  <div class="quote-band">
+    <blockquote>
+      "The most ordinary act of showing up for someone in need is one of the most extraordinary things a human being can do."
+    </blockquote>
+    <cite>— Revathy Venkat</cite>
+  </div>
+
+  <!-- PROGRAMMES -->
+  <section id="programmes">
+    <div class="wrap">
+      <div class="programmes-header">
+        <h2 class="programmes-title">Programmes &<br><em>Contributions</em></h2>
+        <p class="programmes-desc">
+          Each programme Revathy has been part of serves a distinct need — but they all share the same heart.
+        </p>
+      </div>
+      <div class="prog-grid">
+        <div class="prog-card">
+          <div class="prog-icon">❤️</div>
+          <div class="prog-num">01</div>
+          <div class="prog-name">Family Ambassador — FFL</div>
+          <p class="prog-body">
+            Core volunteer role with Families for Life Singapore. Engaging parents and children at booths, roadshows, and community events across 10+ towns — 41 confirmed events and 102 logged service hours in 2025–2026.
+          </p>
+          <span class="prog-years">Families for Life · 102 hours · 41 events</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon">🎉</div>
+          <div class="prog-num">02</div>
+          <div class="prog-name">National Family Festival 2025 & 2026</div>
+          <p class="prog-body">
+            Volunteered at both NFF 2025 and NFF 2026 @ Expo — Singapore's flagship family celebration. Ran registration booths, guided families, and was part of the team serving tens of thousands of visitors across multiple days.
+          </p>
+          <span class="prog-years">May 2025 · May–Jun 2026 · Expo Singapore</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon">🇸🇬</div>
+          <div class="prog-num">03</div>
+          <div class="prog-name">SG60 National Day Volunteer</div>
+          <p class="prog-body">
+            Volunteered at two National Day events in August 2025 — Fernvale SG60 Celebrations (4h) and Punggol Shore National Day Fiesta (3.5h, evening till night). A proud representation of community spirit at Singapore's Diamond Jubilee.
+          </p>
+          <span class="prog-years">6 Aug & 8 Aug 2025 · Punggol · Sengkang</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon">🏅</div>
+          <div class="prog-num">04</div>
+          <div class="prog-name">Team Nila — Sport Singapore</div>
+          <p class="prog-body">
+            Volunteer with Sport Singapore's official corps — Team Nila. Contributed 97 confirmed hours across 26 sports events including the World Aquatics Championships, Standard Chartered Marathon, World Amateur Team Championships, SBH International Challenge, and NBA Rising Stars.
+          </p>
+          <span class="prog-years">Team Nila · 97 hours · 26 events · 2025–2026</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon">🏊</div>
+          <div class="prog-num">05</div>
+          <div class="prog-name">World Aquatics Championships 2025</div>
+          <p class="prog-body">
+            Front-of-House volunteer at the Masters World Aquatics Championships (13.5h across two days) and Water Polo Cheerleader across three match days. An unforgettable world-class event held right here in Singapore.
+          </p>
+          <span class="prog-years">Jul–Aug 2025 · Singapore · World Stage</span>
+        </div>
+        <div class="prog-card">
+          <div class="prog-icon">🏃</div>
+          <div class="prog-num">06</div>
+          <div class="prog-name">Standard Chartered Marathon 2025</div>
+          <p class="prog-body">
+            Courtesy Crew at the marathon start point — volunteering through the early hours of both race mornings (1am–8am). 13 hours across 6–7 December 2025, showing up when most of Singapore was asleep.
+          </p>
+          <span class="prog-years">6–7 Dec 2025 · Overnight · 13 hours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="photos">
+    <div class="wrap">
+      <div class="gallery-header">
+        <h2 class="gallery-title">Moments That<br><em>Matter</em></h2>
+        <p class="gallery-sub">
+          Nineteen snapshots from years of showing up. Every frame a reminder of why this work matters.
+        </p>
+      </div>
+      <div class="photo-grid" id="photoGrid">
+
+        <div class="photo-item wide" data-index="0" onclick="openLb(0)">
+          <img src="photos/photo01.jpeg" alt="Revathy — Family Begins With Me"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 01</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Family Ambassador</span>Family Begins With Me</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="1" onclick="openLb(1)">
+          <img src="photos/photo02.jpeg" alt="Punggol Booth"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 02</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Community</span>Punggol Booth</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="2" onclick="openLb(2)">
+          <img src="photos/photo03.jpeg" alt="FFL 35th Anniversary"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 03</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Milestone</span>FFL 35th Anniversary</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="3" onclick="openLb(3)">
+          <img src="photos/photo04.jpeg" alt="National Family Festival"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 04</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Family Festival</span>National Family Festival</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="4" onclick="openLb(4)">
+          <img src="photos/photo05.jpeg" alt="Community Event at the Mall"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 05</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Community</span>Mall Outreach</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="5" onclick="openLb(5)">
+          <img src="photos/photo06.jpeg" alt="Chinese New Year Gathering"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 06</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Festive</span>Chinese New Year</div>
+          </div>
+        </div>
+
+        <div class="photo-item wide" data-index="6" onclick="openLb(6)">
+          <img src="photos/photo07.jpeg" alt="Punggol FFL Booth"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 07</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Family Ambassador</span>Punggol FFL Booth</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="7" onclick="openLb(7)">
+          <img src="photos/photo08.jpeg" alt="Team Ready"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 08</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Team</span>Team Ready</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="8" onclick="openLb(8)">
+          <img src="photos/photo09.jpeg" alt="Together in Red"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 09</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Community</span>Together in Red</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="9" onclick="openLb(9)">
+          <img src="photos/photo10.jpeg" alt="SG60 Celebrations"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 10</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">SG60</span>Pasir Ris Celebrations</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="10" onclick="openLb(10)">
+          <img src="photos/photo11.jpeg" alt="National Family Festival Sengkang"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 11</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Family Festival</span>Sengkang — Team in Pink</div>
+          </div>
+        </div>
+
+        <div class="photo-item wide" data-index="11" onclick="openLb(11)">
+          <img src="photos/photo12.jpeg" alt="Large Scale FFL Event"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 12</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">FFL</span>All Hands on Deck</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="12" onclick="openLb(12)">
+          <img src="photos/photo13.jpeg" alt="Children's Day at FFL"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 13</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Children's Day</span>Celebrating Families</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="13" onclick="openLb(13)">
+          <img src="photos/photo14.jpeg" alt="School Roadshow"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 14</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Education</span>School Roadshow</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="14" onclick="openLb(14)">
+          <img src="photos/photo15.jpeg" alt="Community Outreach Booth"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 15</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Outreach</span>Community Booth</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="15" onclick="openLb(15)">
+          <img src="photos/photo16.jpeg" alt="Special Guest Visit"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 16</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">VIP</span>Special Guest Visit</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="16" onclick="openLb(16)">
+          <img src="photos/photo17.jpeg" alt="National Family Festival Team"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 17</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">Team</span>Family Festival Squad</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="17" onclick="openLb(17)">
+          <img src="photos/photo18.jpeg" alt="ReadySetLearn Roadshow Team"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 18</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">RSL</span>ReadySetLearn Team</div>
+          </div>
+        </div>
+
+        <div class="photo-item" data-index="18" onclick="openLb(18)">
+          <img src="photos/photo19.jpeg" alt="National Day Rehearsal 2025"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback" style="display:none;">📸<span>Photo 19</span></div>
+          <div class="photo-overlay">
+            <div class="photo-caption"><span class="tag">National Day</span>SG60 Rehearsal</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-label">The Journey</div>
+      <h2 class="tl-title">2025–2026<br><em>Service Record</em></h2>
+      <div class="tl-track">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">May–Jun 2025</div>
+          <div class="tl-event">National Family Festival 2025 @ Expo</div>
+          <p class="tl-body">Volunteered across two shifts at NFF 2025 (29 May & 1 Jun) — Singapore's flagship family celebration at Expo. Part of the Family Ambassadors team engaging thousands of families over the weekend.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Jun–Aug 2025</div>
+          <div class="tl-event">World Aquatics Championships & Community Events</div>
+          <p class="tl-body">Served as Team Nila Front-of-House volunteer at the World Aquatics Masters Championships (11 & 17 Aug), cheered at Water Polo matches, and clocked hours at PA PLAYGround Punggol and Tampines OTH Festival through the summer.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Aug 2025</div>
+          <div class="tl-event">SG60 National Day — Two Events</div>
+          <p class="tl-body">Punggol Shore National Day Fiesta (6 Aug, evening till night, 3.5h) and Fernvale SG60 National Day Celebrations (8 Aug, 4h). Two nights, two communities, one proud diamond jubilee for Singapore.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Sep–Nov 2025</div>
+          <div class="tl-event">Big Autumn Run of Events</div>
+          <p class="tl-body">Deepavali goodie pack packing (Farrer Park, 2 days), Big Heart 10-niversary at Pasir Ris, Mendaki Family Play Date, World Amateur Team Championships (Team Nila, 3 confirmed days, 19.5h), REAL Run, Stradale Kindness Showcase, and the Standard Chartered Marathon overnight shifts — 6 & 7 December, 1am–8am.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Jan–Mar 2026</div>
+          <div class="tl-event">Sports Volunteering & Community Milestones</div>
+          <p class="tl-body">Kicked off 2026 with the SBH International Challenge (8h), Wings Cross Country (5h), Mega Triple P at Sengkang (4.5h), and the Singapore Minime event (5.5h). Also volunteered at the Pasir Ris EMB Ceremony and McDonald's Lohei Event in Punggol.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-year">Apr–Jun 2026</div>
+          <div class="tl-event">National Family Festival 2026 & More Ahead</div>
+          <p class="tl-body">Confirmed for three shifts at NFF 2026 @ Expo (29–31 May), ReadySetLearn Roadshow (25 Apr), FIBA 3x3 Asia Cup, NBA Rising Stars Invitational, NTUC First Campus Learning Festival, and more. The calendar keeps filling — the commitment never wavers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOMENTS -->
+  <section id="moments">
+    <div class="wrap">
+      <div class="section-label">Stories from the Field</div>
+      <h2 class="moments-title">Moments That <em>Moved Me</em></h2>
+      <div class="moments-grid">
+
+        <div class="moment-card">
+          <div class="moment-icon">🍱</div>
+          <div class="moment-tag">Food Drive</div>
+          <h3 class="moment-heading">The Woman Who Saved the Rice for Her Grandchildren</h3>
+          <p class="moment-body">At a meal distribution camp, one elderly woman quietly slipped half her portion into a bag to take home. That image changed the way I think about hunger forever.</p>
+        </div>
+
+        <div class="moment-card moment-card--rose">
+          <div class="moment-icon">🏅</div>
+          <div class="moment-tag">Singapore Marathon 2025</div>
+          <h3 class="moment-heading">Standing at the Start Line at 1 AM</h3>
+          <p class="moment-body">When thousands of runners streamed past in the dark and one of them shouted "thank you volunteers!" — I realised this was exactly where I was supposed to be.</p>
+        </div>
+
+        <div class="moment-card">
+          <div class="moment-icon">💬</div>
+          <div class="moment-tag">Grandparents' Day</div>
+          <h3 class="moment-heading">The 84-Year-Old Who Just Needed Someone to Listen</h3>
+          <p class="moment-body">He had not spoken to anyone in three days. We sat for two hours. He talked about his wife, his village, his mango tree. I just listened. That was enough.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="wrap">
+      <div class="connect-grid">
+        <div class="connect-left">
+          <div class="section-label">Get in Touch</div>
+          <h2>Let's Build<br><em>Community</em><br>Together.</h2>
+          <p>
+            Whether you're thinking about volunteering, want to connect about family programmes, or just want to say hello — reach out. Every conversation starts with one person choosing to show up.
+          </p>
+          <div class="connect-info">
+            <div class="ci-row">
+              <div class="ci-icon">🌏</div>
+              <div class="ci-text">
+                <span class="ci-label">Location</span>
+                Singapore
+              </div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">❤️</div>
+              <div class="ci-text">
+                <span class="ci-label">Organisation</span>
+                Families for Life Singapore · Team Nila
+              </div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">📅</div>
+              <div class="ci-text">
+                <span class="ci-label">Volunteering Since</span>
+                2024 — Over 2 years of service
+              </div>
+            </div>
+            <div class="ci-row">
+              <div class="ci-icon">💼</div>
+              <div class="ci-text">
+                <span class="ci-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/revathy-venkat-474221411/" target="_blank"
+                   style="color:var(--rose);font-weight:600;text-decoration:none;font-size:0.9rem;">
+                  Revathy Venkat ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="connect-form" id="contactForm" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" id="cf-name" placeholder="Your name" />
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" id="cf-email" placeholder="your@email.com" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Subject</label>
+            <input type="text" id="cf-subject" placeholder="What's on your mind?" />
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea id="cf-message" placeholder="Tell me more..."></textarea>
+          </div>
+          <button class="btn-submit" type="button" onclick="sendMail()">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Revathy<span style="color:var(--rose)">.</span></span>
+    <span class="footer-copy">© 2025 Revathy Venkat · Family Ambassador, Singapore</span>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#photos">Gallery</a>
+      <a href="#moments">Stories</a>
+      <a href="#connect">Connect</a>
+      <a href="https://www.linkedin.com/in/revathy-venkat-474221411/" target="_blank"
+         style="color:var(--rose);font-weight:700;">LinkedIn ↗</a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" id="lb" onclick="closeLb(event)">
+    <div class="lb-inner">
+      <button class="lb-close" onclick="closeLbDirect()">✕</button>
+      <button class="lb-nav lb-prev" onclick="shiftLb(-1)">‹</button>
+      <img id="lb-img" src="" alt="" />
+      <button class="lb-nav lb-next" onclick="shiftLb(1)">›</button>
+    </div>
+  </div>
+
+  <script>
+    // ── Mailto handler ───────────────────────────────────────────────
+    function sendMail() {
+      const name    = document.getElementById('cf-name').value.trim();
+      const email   = document.getElementById('cf-email').value.trim();
+      const subject = document.getElementById('cf-subject').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+      const to      = 'venkat02k2@gmail.com';
+      const sub     = encodeURIComponent(subject || 'Message from Revathy's website');
+      const body    = encodeURIComponent(
+        (name    ? 'From: ' + name + (email ? ' <' + email + '>' : '') + '
+
+' : '') +
+        (message || '(no message)')
+      );
+      window.location.href = 'mailto:' + to + '?subject=' + sub + '&body=' + body;
+    }
+
+    // ── Lightbox ─────────────────────────────────────────────────────
+    const photos = Array.from(document.querySelectorAll('.photo-item img')).map(i => ({
+      src: i.src, alt: i.alt
+    }));
+    let lbIdx = 0;
+
+    function openLb(i) {
+      lbIdx = i;
+      const lb  = document.getElementById('lb');
+      const img = document.getElementById('lb-img');
+      img.src = photos[i].src;
+      img.alt = photos[i].alt;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb(e) {
+      if (e.target === document.getElementById('lb')) closeLbDirect();
+    }
+    function closeLbDirect() {
+      document.getElementById('lb').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function shiftLb(dir) {
+      lbIdx = (lbIdx + dir + photos.length) % photos.length;
+      openLb(lbIdx);
+    }
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lb').classList.contains('open')) return;
+      if (e.key === 'Escape')      closeLbDirect();
+      if (e.key === 'ArrowLeft')   shiftLb(-1);
+      if (e.key === 'ArrowRight')  shiftLb(1);
+    });
+
+    // ── Active nav highlight ─────────────────────────────────────────
+    const sections = document.querySelectorAll('section[id]');
+    const navAs    = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navAs.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? '#E8185A' : '';
+      });
+    });
+  </script>
+</body>
+</html>
